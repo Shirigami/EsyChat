@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+  <!-- Site made with Mobirise Website Builder v3.12.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v3.12.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<body style="background-color:#2e2e2e;">
 <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 <script src="js/firebaseConfig.js"></script>
 <script src="js/htmlActions.js"></script>
 
 
-Create new user:
-<div></div>
-<input id = "username" type = "text" placeholder="User name" class="box">
-<div></div>
-<button type="button" onclick="createChat()">Create</button>
-<div></div>
+<section class="mbr-footer footer4 mbr-section mbr-section-md-padding" id="contacts4-0" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
+    
+    <div class="container">
+        <div class="mbr-contacts row">
+            <div class="col-sm-8">
+                <div class="row">
+                  <img src="img/Chat.png">
+                </div>
+            </div>
+            <div class="col-sm-4" data-form-type="formoid">
+                <form>
+                    <input type="hidden" value="" data-form-user="true">
+                    <div class="form-group">
+						<label class="form-control-label">Create new user</label>
+	                    <input id="username" type="text" placeholder="User name" class="form-control input-sm input-inverse" >
+					</div>
+					<div class="mbr-buttons mbr-buttons--right btn-inverse">
+						<button type="button" class="btn btn-sm btn-black" onclick="createChat()">Create</button>
+					</div>
+					<hr style="background-color:#0275d8;"></hr>
+					<div class="form-group">
+						<label class="form-control-label">Login</label>
+						<input id="usernameLogin" type="text" placeholder="User name" class="form-control input-sm input-inverse">
+					</div>
+					<div class="mbr-buttons mbr-buttons--right btn-inverse">
+						<button type="button" class="btn btn-sm btn-black" onclick="login()">Login</button>
+					</div>
+				</form>
+            </div>
+        </div>
+    </div>
+</section>
 
-Login:
-<div></div>
-<input id = "usernameLogin" type = "text" placeholder="User name" class="box">
-<div></div>
-<button type="button" onclick="login()">Login</button>
-
-
+</body>
 </html>
