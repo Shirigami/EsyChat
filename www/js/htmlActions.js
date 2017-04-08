@@ -128,7 +128,7 @@ commentsRef.on('child_added', function(data) {
 function displayChatMessage(data){
   console.log(data);
   var messages = document.getElementById('messages');
-  var newMessage = "User " + data.id + ":" + data.message;
+  var newMessage = data.user + ":" + data.message;
   newMessage = "<div>" + newMessage + "</div>";
   messages.innerHTML = messages.innerHTML + newMessage;
 }
