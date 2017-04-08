@@ -1,14 +1,13 @@
-/* Function of create users */
-var actualUser;
+/* Create users Functions */
+
 function createUser(){
   var userName = document.getElementById("username").value;
-    revisarUsuario(userName);
+  revisarUsuario(userName);
 };
 
 function revisarUsuario(userName){
   firebase.database().ref('/users/').once('value').then(function(snapshot) {
     var usuarios = snapshot.val();
-    console.log(usuarios);
     for (currentUser in usuarios){
       if (currentUser == userName){
         console.log(currentUser);
@@ -21,18 +20,14 @@ function revisarUsuario(userName){
       photourl : "www.example.com"});
     localStorage.setItem("user",userName);
     alert('User created');
-
   });
 }
-
-function redireccionar(){
-  window.location.href = "index.html";
-};
+/* Login Functions*/
 
 function login(){
-  var userName = document.getElementById("usernameLogin").value;
-  firebase.database().ref('/users/').once('value').then(function(snapshot) {
-    var usuarios = snapshot.val();
+    var userName = document.getElementById("usernameLogin").value;
+    firebase.database().ref('/users/').once('value').then(function(snapshot) {
+      var usuarios = snapshot.val();
     console.log(usuarios);
     for (currentUser in usuarios){
       if (currentUser == userName){
@@ -43,14 +38,49 @@ function login(){
     }
     alert('User does not exists');
   });
+
 }
 
-
+/* General Functions*/
 function onLoadIndex(){
-  console.log(actualUser);
-  document.getElementById("home").innerHTML = localStorage.getItem('user');
+  document.getElementById("home").innerHTML = "Welcome: " + localStorage.getItem('user');
 
 };
+function redireccionar(){
+  window.location.href = "index.html";
+};
+
+function makeList(){
+  firebase.database().ref('/users/').once('value').then(function(snapshot) {
+  var array = snapshot.val();
+
+  var myDiv = document.getElementById('userList');
+  var selectList = document.createElement('select');
+  selectList.setAttribute('id', 'mySelect');
+  myDiv.appendChild(selectList);
+    for(currentUser in array) {
+      console.log(currentUser);
+        var item = document.createElement('option');
+        item.setAttribute("value", currentUser.toString());
+        item.text = currentUser.toString();
+        selectList.appendChild(item);
+      }
+  });
+}
+
+function whatChat() {
+  var user = document.getElementById('mySelect').options[mySelect.selectedIndex].value;
+  console.log(user);
+
+}
+
+function onLoadIndex(){
+  document.getElementById("home").innerHTML = "Welcome: " + localStorage.getItem('user');
+  makeList();
+
+};
+
+
 
 /*
 function push(){

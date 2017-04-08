@@ -6,10 +6,17 @@
 <script src="js/htmlActions.js"></script>
 
 <body onload="onLoadIndex()">
-<div id = "home">Welcome </div>
+<div id = "home"></div>
+
+<div id = "userList" onchange = "whatChat()">Lista de usuarios: </div>
+
+
 <div id= "username"></div>
 <input id = "message" type = "text" placeholder="Message" class="box">
 <button type="button" onclick="push()">Send</button>
 <div id="messages"></div>
+
+
+
 
 </html>
