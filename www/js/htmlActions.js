@@ -2,10 +2,11 @@
 
 function createUser(){
   var userName = document.getElementById("username").value;
-  revisarUsuario(userName);
+  var img = document.getElementById("imagen").value;
+  revisarUsuario(userName,img);
 };
 
-function revisarUsuario(userName){
+function revisarUsuario(userName,img){
   firebase.database().ref('/users/').once('value').then(function(snapshot) {
     var usuarios = snapshot.val();
     for (currentUser in usuarios){
@@ -17,9 +18,10 @@ function revisarUsuario(userName){
     }
 
     firebase.database().ref().child('users/' + userName).set({
-      photourl : "www.example.com"});
+      photourl : img});
     alert('User created');
   });
+
 }
 /* Login Functions*/
 
@@ -75,6 +77,19 @@ function whatChat() {
 function onLoadIndex(){
   document.getElementById("home").innerHTML = "Welcome: " + localStorage.getItem('user1');
   makeList();
+  var nombre = localStorage.getItem('user1');
+  var imagen = document.getElementById("img1");
+  firebase.database().ref('/users/').once('value').then(function(snapshot) {
+      var usuarios = snapshot.val();
+      for (currentUser in usuarios){
+        if ('"'+currentUser+'"'== nombre){    
+          imagen.setAttribute('src',usuarios.Dario.photourl);
+        return;
+      }
+    }
+  })
+
+
 
 };
 
@@ -126,9 +141,11 @@ commentsRef.on('child_added', function(data) {
 
 
 function displayChatMessage(data){
-  console.log(data);
+
   var messages = document.getElementById('messages');
   var newMessage = data.user + ":" + data.message;
   newMessage = "<div>" + newMessage + "</div>";
   messages.innerHTML = messages.innerHTML + newMessage;
+  
 }
+
