@@ -38,7 +38,7 @@ var app = {
             PushbotsPlugin,initializeiOS("PUSHBOTS_APP_ID");
         }
         if(PushbotsPlugin.isAndroid){
-            PushbotsPlugin.initializeAndroid("PUSHBOTS_APP_ID","SENDER_ID")
+            PushbotsPlugin.initializeAndroid("AIzaSyAQQ2fG-eGrhs_uiQIalC0zINdSU4EdQr4","705528747148")
         }
     },
     setupPush: function() {
