@@ -20,7 +20,7 @@
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.3" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="com.pushbots.push" version="1.2.1" source="plugins.cordova.io"/>
+    <gap:plugin name="com.pushbots.push" version="1.2.1" source="plugins.cordova.io"/>
 
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
